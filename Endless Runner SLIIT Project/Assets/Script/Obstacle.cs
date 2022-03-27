@@ -15,15 +15,16 @@ public class Obstacle : MonoBehaviour
 
    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Border")
+        if (collision.tag == "Border")
         {
             Destroy(this.gameObject);
         }
 
-        else if (collision.tag == "Player")
+        else if (collision.tag == "Player") ;
         {
-            Destroy(player.gameObject);
+            HealthBarScript.health -= 10f;
         }
+        
     }
-
+    
 }

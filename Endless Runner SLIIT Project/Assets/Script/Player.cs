@@ -19,11 +19,19 @@ public class Player : MonoBehaviour
     {
         float directionY = Input.GetAxisRaw("Vertical");
         playerDirection = new Vector2(0, directionY).normalized;
+
+        
     }
 
     void FixedUpdate()
 
     {
         rb.velocity = new Vector2(0, playerDirection.y * playerSpeed);
+
+        if (HealthBarScript.health <= 0f)
+        {
+            Destroy(this.gameObject);
+        }
     }
+
 }
